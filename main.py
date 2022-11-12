@@ -4,6 +4,13 @@ print("Menu:\n 1.) Add an item\n 2.) Search\n 3.) Exit (Y/n)\n")
 #select item in menu
 option = input("What do you want to do? (1-3): ")
 
+agedict = {}
+regdict = {}
+citydict = {}
+numdict = {}
+emaildict = {}
+testdict = {}
+
 #perform option
 #1. ask data for contact tracing
 while option not in ['1','2','3']:
@@ -18,13 +25,12 @@ while option in ['1','2','3']:
         city = input('City: ')
         num = input('Mobile no.: ')
         email = input('Email: ')
-        vaxx = input('Have you been vaccinated for COVID-19? (Y/n): ')
-        symp = input('Are you currently experiencing any symptoms of COVID-19? (Y/n): ')
         test = input('Were you recently tested for COVID-19? (Y/n): ')
 
-        vaxx = vaxx.lower()
-        symp = symp.lower()
         test = test.lower()
+        while test not in ['y','n']:
+            print('ERROR! Y/n only')
+            test = input('Were you recently tested for COVID-19? (Y/n): ')
 
         if test == 'y':
             pos = input('Did you test positive for COVID? (Y/n): ')
@@ -33,14 +39,24 @@ while option in ['1','2','3']:
             if pos == 'y':
                 print('\nWe sincerely hope you get well soon.')
 
+            else:
+                print('\nGood to know :)')
+
+
+
         print("\nYour data has been recorded and will be saved.")
 
 
-        #logging of items to dictionary
+        #logging of items to dictionaries
+        agedict[name] = age
+        regdict[name] = reg
+        citydict[name] = city
+        numdict[name] = num
+        emaildict[name] = email
+        testdict[name] = test
 
-
-
-
+        print(agedict)
+        print (regdict)
 
 
 
