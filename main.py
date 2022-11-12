@@ -1,8 +1,7 @@
 #display menu
 print("Menu:\n 1.) Add an item\n 2.) Search\n 3.) Exit (Y/n)\n")
 
-#select item in menu
-option = input("What do you want to do? (1-3): ")
+
 
 agedict = {}
 regdict = {}
@@ -11,13 +10,22 @@ numdict = {}
 emaildict = {}
 testdict = {}
 
-#perform option
-#1. ask data for contact tracing
-while option not in ['1','2','3']:
-    print('ERROR! select a number from 1-3')
+
+
+
+while True:
+
+    # select item in menu
     option = input("What do you want to do? (1-3): ")
 
-while option in ['1','2','3']:
+    while option not in ['1', '2', '3']:
+        print('\nERROR! select a number from 1-3\n')
+        option = input("What do you want to do? (1-3): ")
+
+    # perform option
+
+    # 1. ask data for contact tracing
+
     if option == '1':
         name = input('Name: ')
         age = input('Age: ')
@@ -55,8 +63,6 @@ while option in ['1','2','3']:
         emaildict[name] = email
         testdict[name] = test
 
-        print(agedict)
-        print (regdict)
 
 
 
