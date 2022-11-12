@@ -1,17 +1,12 @@
 #display menu
 print("Menu:\n 1.) Add an item\n 2.) Search\n 3.) Exit (Y/n)\n")
 
-
-
 agedict = {}
 regdict = {}
 citydict = {}
 numdict = {}
 emaildict = {}
 testdict = {}
-
-
-
 
 while True:
 
@@ -74,7 +69,7 @@ while True:
         print('City:',citydict.get(name))
         print('Mobile no.:',numdict.get(name))
         print('Email:',emaildict.get(name))
-        print('Recently tested for COVID? (y/n) :',testdict.get(name)'\n')
+        print('Recently tested for COVID? (y/n) :',testdict.get(name),'\n')
 
     # 3. exit or retry
     if option == '3':
@@ -82,10 +77,13 @@ while True:
         cont = cont.lower()
 
         if cont == 'y':
+            print('Goodbye!')
             break;
+
 
         else:
             continue;
+
 
 
 
